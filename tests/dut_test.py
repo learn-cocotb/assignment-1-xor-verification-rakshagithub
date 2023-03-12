@@ -1,12 +1,12 @@
 import cocotb
-from cocotb.triggers import Timer, Rising edge
+from cocotb.triggers import Timer
 
 
 @cocotb.test()
-async def xor_test(dut):
+async def dut_test(dut):
     a=(0,0,1,1)
     b=(0,1,0,1)
-    y=(1,0,0,0)
+    y=(0,1,1,0)
     for i in range(4):
         dut.a.value=a[i]
         dut.b.value=b[i]
